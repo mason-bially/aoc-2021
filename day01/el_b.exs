@@ -1,12 +1,13 @@
 Code.require_file("el.ex", __DIR__)
 
-File.stream!("day01/input.txt", [encoding: :utf8], :line)
+File.stream!("day01/input", [encoding: :utf8], :line)
 |> Stream.map(&elem(Integer.parse(&1), 0))
-|> Stream.map(
-  &Enum.sum(
-    Stream.unfold(Day01.fuel_equation(&1), fn
-      x when x <= 0 -> nil
-      x -> {x, Day01.fuel_equation(x)}
-    end)))
+|> Enum.chunk_every(3, 1, :discard)
+|> Stream.map(&Enum.sum(&1))
+|> Enum.chunk_every(2, 1, :discard)
+|> Stream.map(fn
+    [a, b] when b > a -> 1
+    _ -> 0
+  end)
 |> Enum.sum()
 |> IO.inspect
