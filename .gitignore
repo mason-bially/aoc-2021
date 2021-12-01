@@ -1,0 +1,15 @@
+# for Elixr:
+/_build
+/cover
+/deps
+/doc
+/.fetch
+erl_crash.dump
+*.ez
+*.beam
+/config/*.secret.exs
+
+# for Rust:
+/target/
+Cargo.lock
+**/*.rs.bk
