@@ -1,2 +1,2 @@
-# aoc-2019
-My solutions for advent of code 2019 using elixer (or maybe rust, who knows!).
+# aoc-2021
+My solutions for advent of code 2021 using elixer (or maybe cult, who knows!).
