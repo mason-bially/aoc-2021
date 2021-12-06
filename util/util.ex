@@ -34,4 +34,8 @@ defmodule Util do
   def result_send(value, dest, key) do
     send(dest, {key, value})
   end
+
+  def counter(index, acc) do
+    Map.update(acc, index, 1, &(&1 + 1))
+  end
 end
