@@ -5,14 +5,6 @@ defmodule Day03 do
     String.to_charlist(line)
   end
 
-  def parse_commands(cmd) do
-    case cmd do
-      {"forward", x} -> {x, 0}
-      {"down", x} -> {0, x}
-      {"up", x} -> {0, -x}
-    end
-  end
-
   def transpose(rows) do
     rows
     |> List.zip
